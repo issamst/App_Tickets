@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{15A00E6C-16BA-4A53-8937-0B64EF6E26A2}|Asp_Net_Ticket\\Asp_Net_Ticket.csproj|c:\\users\\serbo\\desktop\\26p06p202499\\app2\\app\\asp_net_ticket\\asp_net_ticket\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15A00E6C-16BA-4A53-8937-0B64EF6E26A2}|Asp_Net_Ticket\\Asp_Net_Ticket.csproj|solutionrelative:asp_net_ticket\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15A00E6C-16BA-4A53-8937-0B64EF6E26A2}|Asp_Net_Ticket\\Asp_Net_Ticket.csproj|c:\\users\\serbo\\desktop\\26p06p202499\\app2\\app\\asp_net_ticket\\asp_net_ticket\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15A00E6C-16BA-4A53-8937-0B64EF6E26A2}|Asp_Net_Ticket\\Asp_Net_Ticket.csproj|solutionrelative:asp_net_ticket\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15A00E6C-16BA-4A53-8937-0B64EF6E26A2}|Asp_Net_Ticket\\Asp_Net_Ticket.csproj|c:\\users\\serbo\\desktop\\26p06p202499\\app2\\app\\asp_net_ticket\\asp_net_ticket\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15A00E6C-16BA-4A53-8937-0B64EF6E26A2}|Asp_Net_Ticket\\Asp_Net_Ticket.csproj|solutionrelative:asp_net_ticket\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Asp_Net_Ticket\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "Asp_Net_Ticket\\Context\\AppDbContext.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:45:06.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\Program.cs",
+              "RelativeDocumentMoniker": "Asp_Net_Ticket\\Program.cs",
+              "ToolTip": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\Program.cs",
+              "RelativeToolTip": "Asp_Net_Ticket\\Program.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABEAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:43:43.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "Asp_Net_Ticket\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\WeatherForecast.cs",
+              "RelativeToolTip": "Asp_Net_Ticket\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:43:40.281Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

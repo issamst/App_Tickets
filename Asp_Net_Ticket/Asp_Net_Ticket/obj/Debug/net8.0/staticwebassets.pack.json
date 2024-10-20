@@ -1,0 +1,105 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Areas.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Areas.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Departements.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Departements.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Departments (1).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Departments (1).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Departments.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Departments.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Impacts (1).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Impacts (1).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Impacts (2).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Impacts (2).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Machines.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Machines.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Plants (1).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Plants (1).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Plants (2).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Plants (2).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Plants (3).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Plants (3).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Plants.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Plants.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Projects.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Projects.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Roles.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Roles.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Titles (3).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Titles (3).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Titles (6).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Titles (6).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Titles.xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Titles.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Users (21).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Users (21).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Users (23).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Users (23).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Users (5).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Users (5).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Users (8).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Users (8).xlsx"
+    },
+    {
+      "Id": "C:\\Users\\serbo\\Desktop\\26P06P202499\\App2\\App\\Asp_Net_Ticket\\Asp_Net_Ticket\\wwwroot\\Uploads\\Users (9).xlsx",
+      "PackagePath": "staticwebassets\\Uploads\\Users (9).xlsx"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Asp_Net_Ticket.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Asp_Net_Ticket.props",
+      "PackagePath": "build\\Asp_Net_Ticket.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Asp_Net_Ticket.props",
+      "PackagePath": "buildMultiTargeting\\Asp_Net_Ticket.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Asp_Net_Ticket.props",
+      "PackagePath": "buildTransitive\\Asp_Net_Ticket.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

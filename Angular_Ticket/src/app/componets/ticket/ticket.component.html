@@ -1,0 +1,462 @@
+ 
+<div class="card">
+    <div class="card-head"><h1> Tickets</h1>   </div>
+    <div class="card-body">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="All-Tickets-tab" data-toggle="tab" href="#All-Tickets" role="tab" aria-controls="nav-home" aria-selected="true">All Tickets</a>
+          <a class="nav-item nav-link" id="nav-Active Role-tab" data-toggle="tab" href="#All_Ticekts_Deletes" role="tab" aria-controls="nav-profile" aria-selected="false">All  Deleted Tickets </a>
+        </div>
+      </nav>
+      <div class="tab-content" id="ex1-content">
+        <div class="tab-pane fade show active" id="All-Tickets" role="tabpanel" aria-labelledby="All-Tickets-tab">
+          <div class="tab-pane fade show active" id="Users" role="tabpanel">
+            <div class="table-responsive">
+              <div style="display: flex; justify-content: space-between; align-items: center;margin: 2rem;">
+                <div class="form-outline" style="flex: 1;">
+                  <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="Search" aria-label="search" style="width: 40%;background-color: #ecf0f400;border: 4px solid #ecf0f4;">
+                </div>
+                <div class="head-user-avatar head-user-avatar-1" [cdkMenuTriggerFor]="userOverlay">
+    
+                  <button class="dropdown-link" (click)="toggleDropdown()"
+                  (click)="changeButtonColorC()" 
+                [ngClass]="{'active': isActiveC}" 
+                style="margin: 0 10px; transition: background-color 0.3s;">
+                <i class="fa fa-filter" aria-hidden="true"></i>
+                  Choose list columns       
+                  <i *ngIf="!isUserOverlayOpen" class="fa fa-angle-left"></i>
+                  <i *ngIf="isUserOverlayOpen" class="fa fa-angle-down"></i>
+                  </button>
+                </div>
+                
+    
+                <div class="head-user-avatar head-user-avatar-1" style="margin: 7px;" >
+                  <button class="btn-save " 
+                  (click)="openModel(); changeButtonColor()" 
+                  [ngClass]="{'active': isActive}" 
+                  style="margin: 0 4px; transition: background-color 0.3s; border-radius: 6px;">
+                  <i class="fa fa-plus-square" aria-hidden="true" style="font-size: 20px;margin-right: 9px;"></i> Add New
+                </button>
+                </div>
+              </div>
+              
+              <div class="tbody-wrapper" style="max-height: 400px; overflow-y: auto;">
+    
+                <table class="table table-striped table-bordered table-sm row-border hover " >
+                  <thead >
+                    <tr>
+                      <th scope="col" (click)="sortData('id')" [ngClass]="{'active': sortBy === 'id'}" *ngIf="showColumns.Ticket_Id">
+                          Ticket Id
+                        <span *ngIf="sortBy === 'id'">
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>
+                      </th>
+                      <th scope="col" (click)="sortData('description')" [ngClass]="{'active': sortBy === 'description'}" *ngIf="showColumns.Description">
+                          Description
+                        <span *ngIf="sortBy === 'description'">
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>
+                      </th>
+                      <th scope="col" (click)="sortData('status')" [ngClass]="{'active': sortBy === 'status'}" *ngIf="showColumns.Status">
+                          Status
+                        <span *ngIf="sortBy === 'status'" >
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>                              </th>
+                      <th scope="col" (click)="sortData('dateCreated')" [ngClass]="{'active': sortBy === 'dateCreated'}" *ngIf="showColumns.Created_Date">
+                         Created Date 
+                        <span *ngIf="sortBy === 'dateCreated'">
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>                               </th>
+                      <th scope="col" (click)="sortData('dateChanged')" [ngClass]="{'active': sortBy === 'dateChanged'}"  *ngIf="showColumns.Modification_Date">
+                      Modification Date 
+                        <span *ngIf="sortBy === 'dateChanged'">
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>
+                      </th>
+                      
+                      
+                      <th scope="col" >
+                      Action
+                      </th>
+                    </tr>
+                  </thead>
+    
+                  <tbody>
+                    <tr *ngFor="let ticket of getDisplayedTicket() |filterUsers:searchtext  ; let i = index" >
+                      <td *ngIf="showColumns.Ticket_Id">{{ticket.id}}</td>
+                      <td *ngIf="showColumns.Description">{{ticket.description}}</td>
+                      <td *ngIf="showColumns.Status">{{ticket.status}}</td>
+                      
+                      <td *ngIf="showColumns.Created_Date">{{ ticket.dateCreated !== '0001-01-01T00:00:00' ? formatDate(ticket.dateCreated) : ' ' }}</td>
+                      <td *ngIf="showColumns.Modification_Date">{{ ticket.dateChanged !== '0001-01-01T00:00:00' ? formatDate(ticket.dateChanged) : ' ' }}</td>
+    
+                      <td>
+                        
+                        <div class="center-icons wrapper"> <!-- Wrap icons in a div with text-align: center -->
+                          <a class="icone view" (click)="selectView(ticket.id); openModelView(ticket.id)" data-toggle="modal" data-target="#viewModal{{i}}">
+                            <div class="tooltip">View</div>
+                             <span><i class="fa fa-eye"></i></span>
+                          </a>
+                          <a class="icone edite" (click)="selectGetUSerbyid(ticket.id); openModelUpdate(ticket.id)" >
+                            <div class="tooltip">Edit</div>
+                            <span><i class="fa fa-fw fa-edit" ></i></span>
+                          </a>
+                          <a class="icone delete" data-toggle="modal" (click)="DeleteTicket(ticket.id)" data-target="#deleteModal{{i}}">
+                            <div class="tooltip">Delete</div>
+                            <span><i class="fa fa-ban" ></i></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+    
+                </table>
+    
+              </div>
+    
+              <div class="card-footer py-2">
+                <div class="hint-text">Showing <b>{{ getDisplayedTicket().length }}</b> out of <b>{{ totalTicket }}</b> entries</div>
+                <nav aria-label="...">
+                  <ul class="pagination justify-content-end mb-0">
+                  <li class="page-item" [ngClass]="{ 'disabled': currentPageTicket === 1 }">
+                  <a class="page-link" (click)="prevPageTicket()" tabindex="-1">
+                  <i class="fas fa-angle-left"></i>
+                  <span class="sr-only">Previous</span>
+                  </a>
+                    </li>
+                    <li class="page-item" *ngFor="let page of pagesTicket" [ngClass]="{ 'active': currentPageTicket === page }">
+                    <a class="page-link" (click)="changePageTicket(page)">{{ page }}</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{ 'disabled': currentPageTicket === totalPagesTicket }">
+                    <a class="page-link" (click)="nextPageTicket()">
+                    <i class="fas fa-angle-right"></i>
+                    <span class="sr-only">Next</span>
+                    </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade show " id="All_Ticekts_Deletes" role="tabpanel" aria-labelledby="All_Ticekts_Deletes-tab">
+          <h1 style="color: gray; text-align: center; font-size: 25px;">Here You Recover Can Return a Ticket !!</h1>
+          <div class="tab-pane fade show active" id="Users" role="tabpanel">
+            <div class="table-responsive">
+              <div style="display: flex; justify-content: space-between; align-items: center;margin: 2rem;">
+                <div class="form-outline" style="flex: 1;">
+                  <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="Search" aria-label="search" style="width: 40%;background-color: #ecf0f400;border: 4px solid #ecf0f4;">
+                </div>
+                
+                <div class="head-user-avatar head-user-avatar-1" [cdkMenuTriggerFor]="userOverlay">
+    
+                 
+                </div>
+              </div>
+              
+              <div class="tbody-wrapper" style="max-height: 400px; overflow-y: auto;">
+    
+                <table class="table table-striped table-bordered table-sm row-border hover " >
+                  <thead >
+                    <tr>
+                      <th scope="col" (click)="sortData('Ticket_Id')" [ngClass]="{'active': sortBy === 'Ticket_Id'}" *ngIf="showColumns.Ticket_Id">
+                          Ticket Id
+                        <span *ngIf="sortBy === 'Ticket_Id'">
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>
+                      </th>
+                      <th scope="col" (click)="sortData('Description')" [ngClass]="{'active': sortBy === 'Description'}" *ngIf="showColumns.Description">
+                          Description
+                        <span *ngIf="sortBy === 'Description'">
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>
+                      </th>
+                      <th scope="col" (click)="sortData('Status')" [ngClass]="{'active': sortBy === 'Status'}" *ngIf="showColumns.Status">
+                          Status
+                        <span *ngIf="sortBy === 'Status'" >
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>                              </th>
+                      <th scope="col" (click)="sortData('Date_Deleted')" [ngClass]="{'active': sortBy === 'Date_Created'}" *ngIf="showColumns.Created_Date">
+                        Deleted Date 
+                        <span *ngIf="sortBy === 'Date_Created'">
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === 1 ? 'black' : '#f1d6d6'}">&#8593;</span>
+                        <span style='font-size:25px;' [ngStyle]="{'color': sortDirection === -1 ? 'black' : '#f1d6d6'}">&#8595;</span>
+                        </span>                               
+                      </th>
+                     
+                      
+                      
+                      <th scope="col" >
+                      Action
+                      </th>
+                    </tr>
+                  </thead>
+    
+                  <tbody>
+                    <tr *ngFor="let ticket of Tickets_Deletes; let i = index">
+                      <td *ngIf="showColumns.Ticket_Id">{{ ticket.ticket_Id }}</td>
+                      <td *ngIf="showColumns.Description">{{ ticket.description }}</td>
+                      <td *ngIf="showColumns.Status">{{ ticket.status }}</td>
+                      <td *ngIf="showColumns.Deleted_Date">
+                        {{ ticket.date_Deleted !== '0001-01-01T00:00:00' ? formatDate(ticket.date_Deleted) : ' ' }}
+                      </td>
+                      <td>
+                          <div class="center-icons wrapper">
+                              <a class="icone view2" (click)="back_Ticket(ticket.id)" data-toggle="modal" data-target="#viewModal{{i}}">
+                                  <div class="tooltip">Recover</div>
+                                  <span><i class="fa fa-arrow-left"></i></span>
+                              </a>
+                              
+                              <a class="icone delete" data-toggle="modal" (click)="Ticket_Delete_Final(ticket.id)" data-target="#deleteModal{{i}}">
+                                  <div class="tooltip">Delete Permanently</div>
+                                  <span><i class="fa fa-ban"></i></span>
+                              </a>
+                          </div>
+                      </td>
+                  </tr>
+                  
+                  </tbody>
+    
+                </table>
+    
+              </div>
+    
+              <div class="card-footer py-2">
+                <div class="hint-text">Showing <b>{{ getDisplayedTicket().length }}</b> out of <b>{{ totalTicket }}</b> entries</div>
+                <nav aria-label="...">
+                  <ul class="pagination justify-content-end mb-0">
+                    <li class="page-item" [ngClass]="{ 'disabled': currentPageTicket === 1 }">
+                    <a class="page-link" (click)="prevPageTicket()" tabindex="-1">
+                    <i class="fas fa-angle-left"></i>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    </li>
+        
+                    <li class="page-item" *ngFor="let page of pagesTicket" [ngClass]="{ 'active': currentPageTicket === page }">
+                    <a class="page-link" (click)="changePageTicket(page)">{{ page }}</a>
+                    </li>
+        
+                    <li class="page-item" [ngClass]="{ 'disabled': currentPageTicket === totalPagesTicket }">
+                    <a class="page-link" (click)="nextPageTicket()">
+                    <i class="fas fa-angle-right"></i>
+                    <span class="sr-only">Next</span>
+                    </a>
+                    </li>
+        
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      
+      
+  <div class="modal" id="AddTicket" style="margin-top:5em ;" #AddTicket>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="https://cdn.icon-icons.com/icons2/2550/PNG/512/plus_icon_152556.png" alt=" Image" style="max-height: 50px;">
+          <h4 class="modal-title" style="text-align: center; margin-left: 2px;">Create New Ticket</h4>
+          <button (click)="onClose()" type="button" class="btn-close"></button>
+      </div>
+        <form [formGroup]="AddTickets">
+          <div class="modal-body">
+            <div class="row">
+              <div>
+                <label for="">Description</label>
+                <input style="background-color: #ecf0f400;border: 4px solid #ecf0f4;" formControlName="description" type="text" class="form-control" placeholder="Description " >
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="status">Status</label>
+                <select style="background-color: #ecf0f400;border: 4px solid #ecf0f4;" formControlName="status" class="form-control">
+                  <!-- Disable the default "Select Status" option -->
+                  <option value="" disabled >Select Status</option>
+                  <option value="Open">Open</option>
+                  <option value="Closed">Closed</option>
+                </select>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+          <div class="modal-footer">
+            <button  (click)="SaveTicket()" type="button" style=" border-radius: 8px;" class="btn  btn-block mt-1 w-1 btn-save">Save</button>
+            <button  (click)="onClear()" type="button"  style=" border-radius: 8px;" class="  mt-1 w-1 btn-close-clear">Clear</button>
+            <button  (click)="onClose()" type="button"  style=" border-radius: 8px;" class=" btn btn-danger mt-1 w-1 btn-close-down">Close</button>
+  
+  
+  
+            
+          </div>
+        </form>
+      </div>
+    </div> 
+  
+  </div>
+      
+  <div class="modal" id="updateTicketModule" style="margin-top:5em ;"  #updateTicketModule>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="https://cdn.icon-icons.com/icons2/2550/PNG/512/plus_icon_152556.png" alt=" Image" style="max-height: 50px;">
+          <h4 class="modal-title" style="text-align: center; margin-left: 2px;">Update Ticket</h4>
+          <button (click)="onClose()" type="button" class="btn-close"></button>
+      </div>
+        <form [formGroup]="UpdateTicket">
+          <div class="modal-body">
+            <div class="row">
+              <div>
+                <label for="">Description</label>
+                <input style="background-color: #ecf0f400;border: 4px solid #ecf0f4;"  formControlName="description" type="text" class="form-control" placeholder="description" >
+              </div>
+            </div>
+            
+            <div class="row">
+              <div>
+                <label for="status">Status</label>
+                <select 
+                  style="background-color: #ecf0f400; border: 4px solid #ecf0f4;" 
+                  formControlName="status" 
+                  class="form-control">
+                  <option value="" disabled>Select Status</option>
+                  <option value="Open">Open</option>
+                  <option value="Closed">Closed</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div >
+                <label for="">Date Created</label>
+                <input  style="background-color: #ecf0f400;border: 4px solid #ecf0f4;" formControlName="dateCreated" type="text" class="form-control" placeholder="Date Created" readonly>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button  (click)="updateTicket(selectedTicketId, UpdateTicket.value)" type="button" style=" border-radius: 8px;" class="btn  btn-block mt-1 w-1 btn-update">Update</button>
+            <button  (click)="onClear()" type="button"  style=" border-radius: 8px;" class="  mt-1 w-1 btn-close-clear">Clear</button>
+            <button  (click)="onClose()" type="button"  style=" border-radius: 8px;" class=" btn btn-danger mt-1 w-1 btn-close-down">Close</button>
+          </div>
+        </form>
+      </div>
+    </div> 
+  
+  </div>
+      
+  
+  <div class="modal" id="ViewTicketModule" style="margin-top: 5em;" #ViewTicketModule>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="https://cdn.icon-icons.com/icons2/2550/PNG/512/plus_icon_152556.png" alt=" Image" style="max-height: 50px;">
+          <h4 class="modal-title" style="text-align: center; margin-left: 2px;">View Ticket</h4>
+          <button (click)="onClose()" type="button" class="btn-close"></button>
+      </div>
+        <form [formGroup]="ViewTicket">
+          <div class="modal-body">
+            <div class="row">
+              <div>
+                <label for="">Ticket Id</label>
+                <input  style="background-color: #ecf0f400;border: 4px solid #ecf0f4;" formControlName="id" type="text" class="form-control" placeholder="ID" readonly>
+              </div>
+            </div>
+            <div class="row">
+              <div >
+              <label for="">Description</label>
+              <input  style="background-color: #ecf0f400;border: 4px solid #ecf0f4;" formControlName="description" type="text" class="form-control" placeholder="description" readonly>
+              </div>
+            </div>
+            <div class="row">
+              <div >
+                <label for="">Status</label>
+                <input style="background-color: #ecf0f400;border: 4px solid #ecf0f4;"  formControlName="status" type="text" class="form-control" placeholder="status" readonly>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="">Date Created</label>
+                <input  style="background-color: #ecf0f400;border: 4px solid #ecf0f4;" formControlName="dateCreated" type="text" class="form-control" placeholder="dateCreated"readonly>
+              </div>
+            </div>
+
+
+            
+            <div class="row">
+                <div class="col">
+                  <label for="">Date Changer</label>
+                  <input  style="background-color: #ecf0f400;border: 4px solid #ecf0f4;" formControlName="dateChanged" type="text" class="form-control" placeholder="dateChanged"readonly>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button  (click)="onClose()" type="button"  style=" border-radius: 8px;" class=" btn btn-danger mt-1 w-1 btn-close-down">Close</button>
+  
+          
+  
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+      
+    
+      
+      
+<ng-template #userOverlay>
+<div class="overlay overlay-user overlay-fall" cdkMenu>
+<ul>
+  <li>
+    <label>
+      <input type="checkbox" [(ngModel)]="showColumns.Ticket_Id" disabled>
+      Ticket Id
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" [(ngModel)]="showColumns.Description">
+      Description
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" [(ngModel)]="showColumns.Status">
+      Status
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" [(ngModel)]="showColumns.Created_Date">
+      Created Date
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" [(ngModel)]="showColumns.Modification_Date">
+      Modification Date
+    </label>
+  </li>
+</ul>
+</div>
+</ng-template>
+
+    
+    
+    
+    

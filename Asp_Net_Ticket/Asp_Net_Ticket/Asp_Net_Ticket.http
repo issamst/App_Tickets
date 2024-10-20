@@ -1,0 +1,6 @@
+@Asp_Net_Ticket_HostAddress = http://localhost:5156
+
+GET {{Asp_Net_Ticket_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
